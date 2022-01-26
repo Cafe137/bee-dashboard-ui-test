@@ -25,7 +25,7 @@ async function assertSingleFileAssetPreviewDuringUpload(page) {
  * @param {puppeteer.Page} page Puppeteer Page object returned by `browser.newPage()`
  */
 async function asserFolderAssetPreviewDuringUpload(page) {
-    await Assert.elementWithTextExists(page, 'p', 'Folder name: test-folder')
+    await Assert.elementWithTextExists(page, 'p', 'Folder Name: test-folder')
     await Assert.elementWithTextExists(page, 'p', 'Kind: Folder')
     await Assert.elementWithTextExists(page, 'p', 'Size: 6.56 kB')
 }
@@ -34,7 +34,7 @@ async function asserFolderAssetPreviewDuringUpload(page) {
  * @param {puppeteer.Page} page Puppeteer Page object returned by `browser.newPage()`
  */
 async function assertWebsiteAssetPreviewDuringUpload(page) {
-    await Assert.elementWithTextExists(page, 'p', 'Folder name: test-website')
+    await Assert.elementWithTextExists(page, 'p', 'Folder Name: test-website')
     await Assert.elementWithTextExists(page, 'p', 'Kind: Website')
     await Assert.elementWithTextExists(page, 'p', 'Size: 390.10 kB')
 }
@@ -43,19 +43,25 @@ async function assertWebsiteAssetPreviewDuringUpload(page) {
  * @param {puppeteer.Page} page Puppeteer Page object returned by `browser.newPage()`
  */
 async function assertSingleFileAssetPreviewDuringDownload(page) {
-    await Assert.elementWithTextExists(page, 'p', 'Filename: da7daddc[…]a994b5c5')
+    await Assert.elementWithTextExists(page, 'p', 'Swarm Hash: da0773a9[…]5f7a1b54')
+    await Assert.elementWithTextExists(page, 'p', 'Filename: text.txt')
     await Assert.elementWithTextExists(page, 'p', 'Kind: text/plain')
     await Assert.elementWithTextExists(page, 'p', 'Size: 1.64 kB')
 }
 
 async function assertFolderAssetPreviewDuringDownload(page) {
-    await Assert.elementWithTextExists(page, 'p', 'Folder name: 0921bb6a[…]55e6dc3c')
+    await Assert.elementWithTextExists(page, 'p', 'Swarm Hash: 724ceacd[…]946b3897')
+    await Assert.elementWithTextExists(page, 'p', 'Folder Name: test-folder')
     await Assert.elementWithTextExists(page, 'p', 'Kind: Folder')
+    await Assert.elementWithTextExists(page, 'h6', '4 items')
 }
 
 async function assertWebsiteAssetPreviewDuringDownload(page) {
-    await Assert.elementWithTextExists(page, 'p', 'Folder name: 4a74edb3[…]43f842d2')
+    await Assert.elementWithTextExists(page, 'p', 'Swarm Hash: ed73af53[…]02ca597e')
+    await Assert.elementWithTextExists(page, 'p', 'Folder Name: test-website')
     await Assert.elementWithTextExists(page, 'p', 'Kind: Website')
+    await Assert.elementWithTextExists(page, 'p', 'Size: 390.10 kB')
+    await Assert.elementWithTextExists(page, 'h6', '3 items')
 }
 
 /**
