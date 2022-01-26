@@ -12,7 +12,9 @@
     "license": "ISC",
     "dependencies": {
         "cafe-puppeteer": "^1.0.0",
+        "cafe-sharp": "^1.0.0",
         "cafe-utility": "^1.37.0",
+        "node-fetch": "^3.2.0",
         "puppeteer": "^13.1.1"
     }
 }

@@ -1,13 +1,14 @@
 import { Arrays, Logger } from 'cafe-utility'
 import puppeteer from 'puppeteer'
 import { testFolderUpload } from './test-case/FolderUpload'
+import { testImageFileUpload } from './test-case/ImageFileUpload'
 import { testTextFileUpload } from './test-case/TextFileUpload'
 import { testWebsiteUpload } from './test-case/WebsiteUpload'
 
 const VIEWPORT = { width: 1366, height: 768 }
 const logger = Logger.create(import.meta.url)
 
-const testCases = [testWebsiteUpload, testFolderUpload, testTextFileUpload]
+const testCases = [testImageFileUpload, testWebsiteUpload, testFolderUpload, testTextFileUpload]
 
 async function main() {
     const page = await preparePage()
